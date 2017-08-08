@@ -64,4 +64,4 @@ Caffe的使用
 `caffenet_iter_15000.caffemodel`为第二步中训练得到的模型（[下载地址](http://pan.baidu.com/s/1jIN0BI2)（密码：1bj6））
 `mean.binaryproto`为第一步生成的训练集均值文件
 `labels.txt`中保存了类别的名字
-`images/18.jpg`为测试图像
+`images/15.jpg`为测试图像
