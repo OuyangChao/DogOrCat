@@ -10,10 +10,10 @@ Caffe的使用
 
 `generate_list.py`: 将数据分成训练集和验证集，制作train.txt和val.txt，为生成lmdb格式数据做准备。
 
-`covert_data.bat`: 将图像数据转换为lmdb格式数据，并生成训练集的均值文件。
+`prepare_data.bat`: 将图像数据转换为lmdb格式数据，并生成训练集的均值文件。
 
 ## 1.2 运行说明
-* 首先运行`prepare_data.py`文件（命令：`python prepare_data.py`），如果有路径问题，注意修改源程序中的相应路径。
+* 首先运行`generate_list.py`文件（命令：`python generate_list.py`），如果有路径问题，注意修改源程序中的相应路径。
 该程序将数据分成训练集和验证集（随机打乱，其中训练集所占比例为80%），生成`train.txt`和`val.txt`。`train.txt`和`val.txt`中的格式如下：
  ```
 0/cat.1525.jpg 0
@@ -25,7 +25,7 @@ Caffe的使用
 1/dog.1557.jpg 1
 ...
  ```
-* 最后运行`covert_data.bat`文件（直接双击即可），如果有路径问题，注意修改源程序中的相应路径。
+* 最后运行`prepare_data.bat`文件（直接双击即可），如果有路径问题，注意修改源程序中的相应路径。
  * convert_imageset.exe
 `--shuffle` 随机打乱数据（可选参数）
 `--resize_height=256  --resize_width=256` 将数据缩放成256*256
