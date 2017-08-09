@@ -9,6 +9,7 @@ Caffe的使用
 > 原始训练集都在一个文件夹下，这里将猫和狗分开存放，可在[百度网盘](http://pan.baidu.com/s/1bpeZDnT)（密码：1vsu）中下载。
 
 `generate_list.py`: 将数据分成训练集和验证集，制作train.txt和val.txt，为生成lmdb格式数据做准备。
+
 `covert_data.bat`: 将图像数据转换为lmdb格式数据，并生成训练集的均值文件。
 
 ## 1.2 运行说明
