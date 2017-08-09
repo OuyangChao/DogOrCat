@@ -7,9 +7,7 @@ Caffe的使用
 ## 1.1 文件说明
 `data`: 存放训练集文件夹，在该文件夹下又有两个文件夹（以类别数字命名，命名为0和1，分别存放猫和狗）。
 > 原始训练集都在一个文件夹下，这里将猫和狗分开存放，可在[百度网盘](http://pan.baidu.com/s/1bpeZDnT)（密码：1vsu）中下载。
-
 `generate_list.py`: 将数据分成训练集和验证集，制作train.txt和val.txt，为生成lmdb格式数据做准备。
-
 `covert_data.bat`: 将图像数据转换为lmdb格式数据，并生成训练集的均值文件。
 
 ## 1.2 运行说明
@@ -27,20 +25,13 @@ Caffe的使用
  ```
 * 最后运行`covert_data.bat`文件（直接双击即可），如果有路径问题，注意修改源程序中的相应路径。
  * convert_imageset.exe
-
 `--shuffle` 随机打乱数据（可选参数）
-
 `--resize_height=256  --resize_width=256` 将数据缩放成256*256
-
 `data/` 为数据所在文件夹，data加上train.txt中的图像路径就是图像的完整路径
-
 `train.txt` 为第一步中生成的train.txt
-
 `img_train_lmdb` 为保存的lmdb文件（最后生成的是一个文件夹）
  * compute_image_mean.exe
-
 `img_train_lmdb` 为保存的训练集lmdb文件
-
 `mean.binaryproto` 为训练集的均值文件
 
 
