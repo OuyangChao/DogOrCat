@@ -14,25 +14,25 @@ Caffe的使用
 * 首先运行`generate_list.py`文件（命令：`python generate_list.py`），如果有路径问题，注意修改源程序中的相应路径。
 该程序将数据分成训练集和验证集（随机打乱，其中训练集所占比例为80%），生成`train.txt`和`val.txt`。`train.txt`和`val.txt`中的格式如下：
  ```
-0/cat.1525.jpg 0
-0/cat.4225.jpg 0
-0/cat.4166.jpg 0
-...
-1/dog.8919.jpg 1
-1/dog.2960.jpg 1
-1/dog.1557.jpg 1
-...
+ 0/cat.1525.jpg 0
+ 0/cat.4225.jpg 0
+ 0/cat.4166.jpg 0
+ ...
+ 1/dog.8919.jpg 1
+ 1/dog.2960.jpg 1
+ 1/dog.1557.jpg 1
+ ...
  ```
 * 最后运行`prepare_data.bat`文件（直接双击即可），如果有路径问题，注意修改源程序中的相应路径。
  * convert_imageset.exe
-`--shuffle` 随机打乱数据（可选参数）
-`--resize_height=256  --resize_width=256` 将数据缩放成256*256
-`data/` 为数据所在文件夹，data加上train.txt中的图像路径就是图像的完整路径
-`train.txt` 为第一步中生成的train.txt
-`img_train_lmdb` 为保存的lmdb文件（最后生成的是一个文件夹）
+  `--shuffle` 随机打乱数据（可选参数）
+  `--resize_height=256  --resize_width=256` 将数据缩放成256*256
+  `data/` 为数据所在文件夹，data加上train.txt中的图像路径就是图像的完整路径
+  `train.txt` 为第一步中生成的train.txt
+  `img_train_lmdb` 为保存的lmdb文件（最后生成的是一个文件夹）
  * compute_image_mean.exe
-`img_train_lmdb` 为保存的训练集lmdb文件
-`mean.binaryproto` 为训练集的均值文件
+  `img_train_lmdb` 为保存的训练集lmdb文件
+  `mean.binaryproto` 为训练集的均值文件
 
 
 # 2. 训练
@@ -44,9 +44,9 @@ Caffe的使用
 ## 2.2 运行说明
 * 运行`train.bat`
  * caffe.exe
-`train`表示caffe处于训练阶段
-`--solver=bvlc_reference_caffenet/solver.prototxt`为整个模型运行的参数配置文件
-`--weight=bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel`为已经训练好的caffenet模型
+  `train`表示caffe处于训练阶段
+  `--solver=bvlc_reference_caffenet/solver.prototxt`为整个模型运行的参数配置文件
+  `--weight=bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel`为已经训练好的caffenet模型
 
 
 # 3. 测试
@@ -59,8 +59,8 @@ Caffe的使用
 ## 3.2 运行说明
 * 运行`classification.bat`
  * classification.exe
-`deploy.prototxt`为caffe测试时使用的文件，保存了网络的结构
-`caffenet_iter_15000.caffemodel`为第二步中训练得到的模型（[下载地址](http://pan.baidu.com/s/1jIN0BI2)（密码：1bj6））
-`mean.binaryproto`为第一步生成的训练集均值文件
-`labels.txt`中保存了类别的名字
-`images/15.jpg`为测试图像
+  `deploy.prototxt`为caffe测试时使用的文件，保存了网络的结构
+  `caffenet_iter_15000.caffemodel`为第二步中训练得到的模型（[下载地址](http://pan.baidu.com/s/1jIN0BI2)（密码：1bj6））
+  `mean.binaryproto`为第一步生成的训练集均值文件
+  `labels.txt`中保存了类别的名字
+  `images/15.jpg`为测试图像
